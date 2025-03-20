@@ -233,7 +233,9 @@ app.get("/api/lich-su-diem-danh", authMiddleware(["admin", "giaovien"]), async (
     res.status(500).json({ error: "Lỗi truy vấn database!" });
   }
 });
-
+app.get("/", (req, res) => {
+  res.send("Server is running!");
+});
 const PORT = process.env.PORT || 5002;
 app.listen(PORT, () => {
   console.log(`✅ Server đang chạy tại http://localhost:${PORT}`);
