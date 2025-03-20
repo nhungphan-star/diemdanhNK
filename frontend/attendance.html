@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách điểm danh</title>
+    <script defer src="attendance.js"></script>
+    <style>
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
+        th { background-color: #f4f4f4; }
+        .green { background-color: #d4edda; } /* Đúng giờ */
+        .red { background-color: #f8d7da; }   /* Đi trễ */
+        .gray { background-color: #e2e3e5; }  /* Chưa quét */
+    </style>
+</head>
+<body>
+    <h2>Danh sách điểm danh</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Học sinh</th>
+                <th>Ngày</th>
+                <th>Trạng thái</th>
+            </tr>
+        </thead>
+        <tbody id="attendance-list"></tbody>
+    </table>
+</body>
+</html>

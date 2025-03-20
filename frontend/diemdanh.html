@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Điểm Danh bằng QR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/html5-qrcode"></script>
+</head>
+<body class="flex flex-col items-center justify-center h-screen bg-gray-100">
+    <h2 class="text-2xl font-bold mb-4">Quét QR để điểm danh</h2>
+    <div id="reader" class="w-80 h-80 border-2 border-gray-400"></div>
+    <p id="result" class="mt-4 text-lg font-bold"></p>
+
+    <script>
+    // Kiểm tra đăng nhập
+    const token = localStorage.getItem("token");
+    if (!token) {
+        alert("Bạn chưa đăng nhập!");
+        window.location.href = "login.html";
+    }
+
+    function onScanSuccess(decodedText) {
+        console.log("Mã QR quét được:", decodedText);
+
+        // Chỉ chấp nhận mã QR cố định
+        if (decodedText !== "diemdanh_toantruong") {
+            alert("❌ Mã QR không hợp lệ!");
+            return;
+        }
+
+        fetch("http://localhost:5002/api/diem-danh", {
+            method: "POST",
+            headers: { 
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + token
+            },
+            body: JSON.stringify({ qr_code: decodedText }) // Gửi mã QR lên server
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                alert("❌ " + data.error);
+            } else {
+                alert("✅ " + data.message);
+                document.getElementById("result").innerText = "Trạng thái: " + data.trangthai;
+            }
+        })
+        .catch(error => {
+            alert("⚠ Lỗi kết nối!");
+            console.error(error);
+        });
+    }
+
+    function onScanFailure(error) {
+        console.warn(`Quét thất bại: ${error}`);
+    }
+
+    let html5QrCode = new Html5Qrcode("reader");
+    html5QrCode.start(
+        { facingMode: "environment" }, // Camera sau
+        { fps: 10, qrbox: 250 },
+        onScanSuccess,
+        onScanFailure
+    );
+    </script>
+</body>
+</html>

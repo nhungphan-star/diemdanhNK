@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh Sách Điểm Danh</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
+    <h1 class="text-2xl font-bold mb-4">Danh Sách Điểm Danh</h1>
+    <table class="w-full max-w-3xl bg-white shadow-md rounded-lg">
+        <thead>
+            <tr class="bg-blue-500 text-white">
+                <th class="py-2 px-4">#</th>
+                <th class="py-2 px-4">Họ Tên</th>
+                <th class="py-2 px-4">Lớp</th>
+                <th class="py-2 px-4">Ngày</th>
+                <th class="py-2 px-4">Trạng Thái</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+            <tr>
+                <td colspan="5" class="text-center py-4">Đang tải dữ liệu...</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        // Kiểm tra đăng nhập
+        const token = localStorage.getItem("token");
+        if (!token) {
+            alert("Bạn chưa đăng nhập!");
+            window.location.href = "login.html";
+        }
+
+        // Gọi API lấy danh sách điểm danh
+        fetch("http://localhost:5002/api/danhsach-diemdanh", {
+            headers: { "Authorization": "Bearer " + token }
+        })
+        .then(response => response.json())
+        .then(data => {
+            const tableBody = document.getElementById("table-body");
+            tableBody.innerHTML = ""; // Xóa dòng "Đang tải dữ liệu..."
+
+            data.forEach((item, index) => {
+                const row = `
+                    <tr class="border-b">
+                        <td class="py-2 px-4 text-center">${index + 1}</td>
+                        <td class="py-2 px-4">${item.hoten}</td>
+                        <td class="py-2 px-4">${item.lop}</td>
+                        <td class="py-2 px-4">${item.ngay}</td>
+                        <td class="py-2 px-4 ${item.trangthai === 'Đúng giờ' ? 'text-green-500' : 'text-red-500'}">
+                            ${item.trangthai}
+                        </td>
+                    </tr>
+                `;
+                tableBody.innerHTML += row;
+            });
+        })
+        .catch(error => {
+            alert("⚠ Lỗi kết nối đến server!");
+            console.error(error);
+        });
+    </script>
+</body>
+</html>

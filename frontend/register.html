@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center h-screen bg-gray-100">
+    <div class="w-full max-w-sm bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold text-center mb-4">Đăng Ký</h2>
+        <form id="registerForm">
+            <label class="block">Họ Tên</label>
+            <input type="text" id="name" class="w-full p-2 border rounded mb-2" required>
+            <label class="block">Email</label>
+            <input type="email" id="email" class="w-full p-2 border rounded mb-2" required>
+            <label class="block">Mật khẩu</label>
+            <input type="password" id="password" class="w-full p-2 border rounded mb-2" required>
+            <label class="block">Xác nhận mật khẩu</label>
+            <input type="password" id="confirmPassword" class="w-full p-2 border rounded mb-2" required>
+            <label class="block">Chọn khối</label>
+            <select id="grade" class="w-full p-2 border rounded mb-2" required>
+                <option value="10">Khối 10</option>
+                <option value="11">Khối 11</option>
+                <option value="12">Khối 12</option>
+            </select>
+            <label class="block">Chọn lớp</label>
+            <select id="class" class="w-full p-2 border rounded mb-2" required>
+                <option value="A1">Lớp A1</option>
+                <option value="A2">Lớp A2</option>
+                <option value="A3">Lớp A3</option>
+                <option value="A4">Lớp A4</option>
+                <option value="A1">Lớp A5</option>
+                <option value="A2">Lớp A6</option>
+                <option value="A3">Lớp A7</option>
+                <option value="A4">Lớp A8</option> <option value="A1">Lớp A1</option>
+                <option value="A2">Lớp A9</option>
+                <option value="A3">Lớp A10</option>
+                <option value="A4">Lớp A11</option> <option value="A1">Lớp A1</option>
+                <option value="A2">Lớp A12</option>
+                <option value="A3">Lớp A13</option>
+                <option value="A4">Lớp A14</option> <option value="A1">Lớp A1</option>
+                <option value="A2">Lớp A15</option>
+                <option value="A3">Lớp A16</option>
+                <option value="A4">Lớp A17</option>
+                <option value="A1">Lớp A18</option>
+                <option value="A2">Lớp A19</option>
+                <option value="A3">Lớp A20</option>
+            </select>
+            <button type="submit" class="w-full bg-green-500 text-white p-2 rounded">Đăng Ký</button>
+        </form>
+        <p class="text-center mt-2">Đã có tài khoản? <a href="login.html" class="text-blue-500">Đăng nhập</a></p>
+    </div>
+    
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+            const grade = document.getElementById("grade").value;
+            const classSelected = document.getElementById("class").value;
+            
+            if (password !== confirmPassword) {
+                alert("Mật khẩu xác nhận không khớp!");
+                return;
+            }
+            
+            const response = await fetch("http://localhost:5002/api/dang-ky", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name, email, password, grade, class: classSelected })
+            });
+            
+            const data = await response.json();
+            if (response.ok) {
+                alert("Đăng ký thành công!");
+                window.location.href = "login.html";
+            } else {
+                alert(data.error || "Đăng ký thất bại!");
+            }
+        });
+    </script>
+</body>
+</html>

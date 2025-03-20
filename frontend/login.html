@@ -1,0 +1,54 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center h-screen bg-gray-100">
+    <div class="w-full max-w-sm bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold text-center mb-4">Đăng Nhập</h2>
+        <form id="loginForm">
+            <label class="block">Email</label>
+            <input type="email" id="email" class="w-full p-2 border rounded mb-2" required>
+            <label class="block">Mật khẩu</label>
+            <input type="password" id="password" class="w-full p-2 border rounded mb-2" required>
+            <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded">Đăng Nhập</button>
+        </form>
+        <p id="errorMessage" class="text-red-500 text-center mt-2 hidden"></p>
+        <p class="text-center mt-2">Chưa có tài khoản? <a href="register.html" class="text-blue-500">Đăng ký</a></p>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", async function (event) {
+            event.preventDefault();
+
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const errorMessage = document.getElementById("errorMessage");
+
+            try {
+                const response = await fetch("http://localhost:5002/api/dang-nhap", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ username: email, password })
+                });
+
+                const data = await response.json();
+                if (!response.ok) {
+                    errorMessage.textContent = data.error;
+                    errorMessage.classList.remove("hidden");
+                } else {
+                    localStorage.setItem("token", data.token);
+                    window.location.href = "index.html"; // Chuyển hướng sau khi đăng nhập thành công
+                }
+            } catch (error) {
+                errorMessage.textContent = "Lỗi kết nối đến server!";
+                errorMessage.classList.remove("hidden");
+            }
+        });
+    </script>
+</body>
+</html>
