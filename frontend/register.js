@@ -2,7 +2,7 @@ document.getElementById("registerForm").addEventListener("submit", async functio
     event.preventDefault();
     
     const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
+    const email = document.getElementById("Email").value;
     const lop = document.getElementById("class").value;
     const grade = document.getElementById("grade").value;
 
