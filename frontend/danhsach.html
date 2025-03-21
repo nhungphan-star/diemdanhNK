@@ -34,7 +34,7 @@
         }
 
         // Gọi API lấy danh sách điểm danh
-        fetch("http://localhost:5002/api/danhsach-diemdanh", {
+        fetch("https://qr-attendance-backend-witc.onrender.com/api/danhsach", {
             headers: { "Authorization": "Bearer " + token }
         })
         .then(response => response.json())
