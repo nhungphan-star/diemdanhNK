@@ -1,0 +1,200 @@
+[33mcommit 9a2175eeca261afa87dab34d11de5d6bbceea17c[m
+Author: nhungphan-star <truongquynhanha324@gmail.com>
+Date:   Fri Mar 21 21:06:23 2025 +0700
+
+    Lưu thay đổi trước khi pull
+
+qr-attendance-old
+
+[33mcommit 55be9b2daaff5d636e6a4c935f0cda36c0115814[m
+Author: nhungphan-star <truongquynhanha324@gmail.com>
+Date:   Fri Mar 21 12:17:15 2025 +0700
+
+    Cập nhật frontend: sửa lỗi ID email và kết nối API
+
+frontend/vite.config.js
+
+[33mcommit 19dbf036c0200a20fae76b15557e715207d6b172[m
+Author: nhungphan-star <truongquynhanha324@gmail.com>
+Date:   Fri Mar 21 10:52:34 2025 +0700
+
+    Cập nhật frontend với file mới
+
+index.html
+
+[33mcommit 70d4188f1781e3613271b82aa72c9444d3d373aa[m
+Author: nhungphan-star <truongquynhanha324@gmail.com>
+Date:   Thu Mar 20 22:36:55 2025 +0700
+
+    Xóa thư mục qr-attendance
+
+qr-attendance
+
+[33mcommit d454b614a0a6e192a66fed4a3ff1e1cac2355fa4[m
+Author: nhungphan-star <truongquynhanha324@gmail.com>
+Date:   Thu Mar 20 21:04:15 2025 +0700
+
+    Reset git cache
+
+node_modules/.bin/acorn
+node_modules/.bin/acorn.cmd
+node_modules/.bin/acorn.ps1
+node_modules/.bin/autoprefixer
+node_modules/.bin/autoprefixer.cmd
+node_modules/.bin/autoprefixer.ps1
+node_modules/.bin/bcrypt
+node_modules/.bin/bcrypt.cmd
+node_modules/.bin/bcrypt.ps1
+node_modules/.bin/browserslist
+node_modules/.bin/browserslist.cmd
+node_modules/.bin/browserslist.ps1
+node_modules/.bin/color-support
+node_modules/.bin/color-support.cmd
+node_modules/.bin/color-support.ps1
+node_modules/.bin/edge-runtime
+node_modules/.bin/edge-runtime.cmd
+node_modules/.bin/edge-runtime.ps1
+node_modules/.bin/esbuild
+node_modules/.bin/esbuild.cmd
+node_modules/.bin/esbuild.ps1
+node_modules/.bin/mime
+node_modules/.bin/mime.cmd
+node_modules/.bin/mime.ps1
+node_modules/.bin/mkdirp
+node_modules/.bin/mkdirp.cmd
+node_modules/.bin/mkdirp.ps1
+node_modules/.bin/nanoid
+node_modules/.bin/nanoid.cmd
+node_modules/.bin/nanoid.ps1
+node_modules/.bin/node-pre-gyp
+node_modules/.bin/node-pre-gyp.cmd
+node_modules/.bin/node-pre-gyp.ps1
+node_modules/.bin/nopt
+node_modules/.bin/nopt.cmd
+node_modules/.bin/nopt.ps1
+node_modules/.bin/rimraf
+node_modules/.bin/rimraf.cmd
+node_modules/.bin/rimraf.ps1
+node_modules/.bin/rollup
+node_modules/.bin/rollup.cmd
+node_modules/.bin/rollup.ps1
+node_modules/.bin/semver
+node_modules/.bin/semver.cmd
+node_modules/.bin/semver.ps1
+node_modules/.bin/ts-node
+node_modules/.bin/ts-node-cwd
+node_modules/.bin/ts-node-cwd.cmd
+node_modules/.bin/ts-node-cwd.ps1
+node_modules/.bin/ts-node-esm
+node_modules/.bin/ts-node-esm.cmd
+node_modules/.bin/ts-node-esm.ps1
+node_modules/.bin/ts-node-script
+node_modules/.bin/ts-node-script.cmd
+node_modules/.bin/ts-node-script.ps1
+node_modules/.bin/ts-node-transpile-only
+node_modules/.bin/ts-node-transpile-only.cmd
+node_modules/.bin/ts-node-transpile-only.ps1
+node_modules/.bin/ts-node.cmd
+node_modules/.bin/ts-node.ps1
+node_modules/.bin/ts-script
+node_modules/.bin/ts-script.cmd
+node_modules/.bin/ts-script.ps1
+node_modules/.bin/tsc
+node_modules/.bin/tsc.cmd
+node_modules/.bin/tsc.ps1
+node_modules/.bin/tsserver
+node_modules/.bin/tsserver.cmd
+node_modules/.bin/tsserver.ps1
+node_modules/.bin/update-browserslist-db
+node_modules/.bin/update-browserslist-db.cmd
+node_modules/.bin/update-browserslist-db.ps1
+node_modules/.bin/vite
+node_modules/.bin/vite.cmd
+node_modules/.bin/vite.ps1
+node_modules/.package-lock.json
+node_modules/.vite/deps/_metadata.json
+node_modules/.vite/deps/package.json
+node_modules/@cspotcode/source-map-support/LICENSE.md
+node_modules/@cspotcode/source-map-support/README.md
+node_modules/@cspotcode/source-map-support/browser-source-map-support.js
+node_modules/@cspotcode/source-map-support/package.json
+node_modules/@cspotcode/source-map-support/register-hook-require.d.ts
+node_modules/@cspotcode/source-map-support/register-hook-require.js
+node_modules/@cspotcode/source-map-support/register.d.ts
+node_modules/@cspotcode/source-map-support/register.js
+node_modules/@cspotcode/source-map-support/source-map-support.d.ts
+node_modules/@cspotcode/source-map-support/source-map-support.js
+node_modules/@edge-runtime/format/LICENSE.md
+node_modules/@edge-runtime/format/README.md
+node_modules/@edge-runtime/format/dist/index.d.ts
+node_modules/@edge-runtime/format/dist/index.js
+node_modules/@edge-runtime/format/dist/index.mjs
+node_modules/@edge-runtime/format/package.json
+node_modules/@edge-runtime/node-utils/LICENSE.md
+node_modules/@edge-runtime/node-utils/README.md
+node_modules/@edge-runtime/node-utils/dist/index.d.ts
+node_modules/@edge-runtime/node-utils/dist/index.js
+node_modules/@edge-runtime/node-utils/dist/index.mjs
+node_modules/@edge-runtime/node-utils/package.json
+node_modules/@edge-runtime/primitives/LICENSE.md
+node_modules/@edge-runtime/primitives/README.md
+node_modules/@edge-runtime/primitives/abort-controller/package.json
+node_modules/@edge-runtime/primitives/blob/package.json
+node_modules/@edge-runtime/primitives/cache/package.json
+node_modules/@edge-runtime/primitives/console/package.json
+node_modules/@edge-runtime/primitives/crypto/package.json
+node_modules/@edge-runtime/primitives/dist/abort-controller.js
+node_modules/@edge-runtime/primitives/dist/blob.js
+node_modules/@edge-runtime/primitives/dist/cache.js
+node_modules/@edge-runtime/primitives/dist/console.js
+node_modules/@edge-runtime/primitives/dist/crypto.js
+node_modules/@edge-runtime/primitives/dist/crypto.js.LEGAL.txt
+node_modules/@edge-runtime/primitives/dist/encoding.js
+node_modules/@edge-runtime/primitives/dist/events.js
+node_modules/@edge-runtime/primitives/dist/fetch.js
+node_modules/@edge-runtime/primitives/dist/fetch.js.LEGAL.txt
+node_modules/@edge-runtime/primitives/dist/index.js
+node_modules/@edge-runtime/primitives/dist/streams.js
+node_modules/@edge-runtime/primitives/dist/streams.js.LEGAL.txt
+node_modules/@edge-runtime/primitives/dist/structured-clone.js
+node_modules/@edge-runtime/primitives/dist/url.js
+node_modules/@edge-runtime/primitives/encoding/package.json
+node_modules/@edge-runtime/primitives/events/package.json
+node_modules/@edge-runtime/primitives/fetch/package.json
+node_modules/@edge-runtime/primitives/package.json
+node_modules/@edge-runtime/primitives/streams/package.json
+node_modules/@edge-runtime/primitives/structured-clone/package.json
+node_modules/@edge-runtime/primitives/types/abort-controller.d.ts
+node_modules/@edge-runtime/primitives/types/blob.d.ts
+node_modules/@edge-runtime/primitives/types/cache.d.ts
+node_modules/@edge-runtime/primitives/types/console.d.ts
+node_modules/@edge-runtime/primitives/types/crypto.d.ts
+node_modules/@edge-runtime/primitives/types/encoding.d.ts
+node_modules/@edge-runtime/primitives/types/events.d.ts
+node_modules/@edge-runtime/primitives/types/fetch.d.ts
+node_modules/@edge-runtime/primitives/types/index.d.ts
+node_modules/@edge-runtime/primitives/types/streams.d.ts
+node_modules/@edge-runtime/primitives/types/structured-clone.d.ts
+node_modules/@edge-runtime/primitives/types/url.d.ts
+node_modules/@edge-runtime/primitives/url/package.json
+node_modules/@edge-runtime/vm/LICENSE.md
+node_modules/@edge-runtime/vm/README.md
+node_modules/@edge-runtime/vm/dist/edge-vm.d.ts
+node_modules/@edge-runtime/vm/dist/edge-vm.js
+node_modules/@edge-runtime/vm/dist/edge-vm.js.map
+node_modules/@edge-runtime/vm/dist/index.d.ts
+node_modules/@edge-runtime/vm/dist/index.js
+node_modules/@edge-runtime/vm/dist/index.js.map
+node_modules/@edge-runtime/vm/dist/types.d.ts
+node_modules/@edge-runtime/vm/dist/types.js
+node_modules/@edge-runtime/vm/dist/types.js.map
+node_modules/@edge-runtime/vm/dist/vm.d.ts
+node_modules/@edge-runtime/vm/dist/vm.js
+node_modules/@edge-runtime/vm/dist/vm.js.map
+node_modules/@edge-runtime/vm/node_modules/@edge-runtime/primitives/LICENSE.md
+node_modules/@edge-runtime/vm/node_modules/@edge-runtime/primitives/README.md
+node_modules/@edge-runtime/vm/node_modules/@edge-runtime/primitives/dist/abort-controller.js.LEGAL.txt
+node_modules/@edge-runtime/vm/node_modules/@edge-runtime/primitives/dist/abort-controller.js.text.js
+node_modules/@edge-runtime/vm/node_modules/@edge-runtime/primitives/dist/blob.js.LEGAL.txt
+node_modules/@edge-runtime/vm/node_modules/@edge-runtime/primitives/dist/blob.js.text.js
+node_modules/@edge-runtime/vm/node
