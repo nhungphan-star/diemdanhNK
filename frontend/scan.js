@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function sendAttendance(qr_code) {
-        fetch("https://qr-attendance-backend-witc.onrender.com/api/diemdanh",{
+        fetch("https://qr-attendance-backend-90tx.onrender.com",{
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

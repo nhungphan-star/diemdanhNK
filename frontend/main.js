@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const errorMessage = document.getElementById("errorMessage");
 
             try {
-                const response = await fetch("https://qr-attendance-backend-witc.onrender.com/api/login", {
+                const response = await fetch("https://qr-attendance-backend-90tx.onrender.com", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ email, password })

@@ -5,8 +5,7 @@ document.getElementById("registerForm").addEventListener("submit", async functio
     const email = document.getElementById("Email").value;
     const lop = document.getElementById("class").value;
     const grade = document.getElementById("grade").value;
-
-    const response = await fetch("https://qr-attendance-backend-witc.onrender.com/api/diemdanh", {
+    const response = await fetch("https://qr-attendance-backend-90tx.onrender.com", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, class: lop, grade })

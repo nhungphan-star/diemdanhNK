@@ -4,7 +4,7 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
-    const response = await fetch("https://qr-attendance-backend-witc.onrender.com/api/diemdanh", {
+    const response = await fetch("https://qr-attendance-backend-90tx.onrender.com", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password })

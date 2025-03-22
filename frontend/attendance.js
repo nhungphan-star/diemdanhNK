@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    fetch("https://qr-attendance-backend-witc.onrender.com/api/diemdanh")
+    fetch("https://qr-attendance-backend-90tx.onrender.com")
         .then(response => response.json())
         .then(data => {
             const tableBody = document.getElementById("attendance-list");
