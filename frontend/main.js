@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const API_BASE_URL = "https://qr-attendance-backend-90tx.onrender.com"; // 🔹 Cập nhật URL đúng backend
+
     const token = localStorage.getItem("token");
 
     // Nếu đã đăng nhập, chuyển hướng sang trang quét QR
@@ -6,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "scan.html";
     }
 
-    // Xử lý đăng nhập
+    // 🔹 Xử lý đăng nhập
     const loginForm = document.getElementById("loginForm");
     if (loginForm) {
         loginForm.addEventListener("submit", async function (event) {
@@ -17,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const errorMessage = document.getElementById("errorMessage");
 
             try {
-                const response = await fetch("https://qr-attendance-backend-90tx.onrender.com", {
+                const response = await fetch("https://qr-attendance-backend-90tx.onrender.com /api/login", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ email, password })
@@ -39,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Xử lý đăng ký
+    // 🔹 Xử lý đăng ký
     const registerForm = document.getElementById("registerForm");
     if (registerForm) {
         registerForm.addEventListener("submit", async function (event) {
@@ -58,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             try {
-                const response = await fetch("https://qr-attendance-backend-witc.onrender.com/api/register", {
+                const response = await fetch("https://qr-attendance-backend-90tx.onrender.com/api/register", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ hoten: name, email, password, khoi: grade, lop: classSelected })
@@ -77,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Xử lý quét mã QR
+    // 🔹 Xử lý quét mã QR
     const qrScanner = document.getElementById("qr-reader");
     if (qrScanner) {
         function onScanSuccess(decodedText) {
@@ -87,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         function sendAttendance(qr_code) {
-            fetch("https://qr-attendance-backend-witc.onrender.com/api/diemdanh", {
+            fetch("https://qr-attendance-backend-90tx.onrender.com/api/diemdanh", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -110,11 +112,11 @@ document.addEventListener("DOMContentLoaded", function () {
             fps: 10,
             qrbox: { width: 250, height: 250 }
         });
-        
+
         html5QrcodeScanner.render(onScanSuccess);
     }
 
-    // Xử lý đăng xuất
+    // 🔹 Xử lý đăng xuất
     const logoutBtn = document.getElementById("logoutBtn");
     if (logoutBtn) {
         logoutBtn.addEventListener("click", function () {

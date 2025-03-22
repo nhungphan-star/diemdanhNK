@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const API_BASE_URL = "https://qr-attendance-backend-90tx.onrender.com"; // ✅ Định nghĩa URL backend
+
     function onScanSuccess(decodedText) {
         console.log(`Mã QR quét được: ${decodedText}`);
         document.getElementById("result").innerText = `Mã QR: ${decodedText}`;
@@ -6,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function sendAttendance(qr_code) {
-        fetch("https://qr-attendance-backend-90tx.onrender.com",{
+        fetch("https://qr-attendance-backend-90tx.onrender.com/api/diemdanh", { 
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -29,6 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
         fps: 10,
         qrbox: { width: 250, height: 250 }
     });
-    
+
     html5QrcodeScanner.render(onScanSuccess);
 });
