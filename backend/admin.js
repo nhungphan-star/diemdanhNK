@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const connection = require("../db"); // Import file kết nối DB
+const connection = require("./db"); // Import file kết nối DB
 
 // API cập nhật năm học mới
 router.post("/capnhat-namhoc", (req, res) => {
