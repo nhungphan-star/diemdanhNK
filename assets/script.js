@@ -1,7 +1,7 @@
 const API_BASE_URL = "https://qr-attendance-backend-90tx.onrender.com"; 
 
 async function themHocSinh() {
-    const res = await fetch(`${API_BASE_URL}/api/them-hoc-sinh`, {
+    const res = await fetch("https://qr-attendance-backend-90tx.onrender.com/api/them-hoc-sinh", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
