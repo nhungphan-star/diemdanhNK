@@ -1,10 +1,12 @@
 const express = require("express");
 const http = require("http");
+const cors = require("cors");
 
 const app = express();
 const PORT = 5002;
 
-// Middleware (đảm bảo có dòng này để parse JSON request)
+// Middleware
+app.use(cors({ origin: "*" })); // Fix lỗi CORS
 app.use(express.json());
 
 // Route thử nghiệm
@@ -20,7 +22,6 @@ app.post("/api/them-hoc-sinh", (req, res) => {
         return res.status(400).json({ message: "Thiếu thông tin học sinh!" });
     }
     
-    // Giả lập lưu vào DB (nếu có)
     res.json({ message: "Thêm học sinh thành công!", hoc_sinh: { ten, ma_hoc_sinh, lop } });
 });
 
